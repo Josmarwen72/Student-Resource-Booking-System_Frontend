@@ -104,5 +104,52 @@ document.addEventListener('DOMContentLoaded', () => {
     });
   });
 
-  // Additional handlers for update/cancel can follow the same pattern
+  // ===== Current Bookings Management (Update & Cancel) =====
+  document.querySelectorAll('.update-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const bookingId = e.target.dataset.booking;
+      const updatedSlot = prompt('Enter the new slot time (e.g., 10:00 – 12:30pm):');
+      if (updatedSlot) {
+        try {
+          const res = await fetch(`${API_BASE}/bookings/${bookingId}`, {
+            method: 'PUT',
+            headers: {
+              'Content-Type': 'application/json',
+              ...getAuthHeaders()
+            },
+            body: JSON.stringify({ slot: updatedSlot })
+          });
+          await handleResponse(res);
+          alert('Booking updated!');
+          window.location.reload();
+        } catch (err) {
+          console.error('Update error:', err);
+          alert(`Update failed: ${err.message}`);
+        }
+      }
+    });
+  });
+
+  document.querySelectorAll('.cancel-btn').forEach(btn => {
+    btn.addEventListener('click', async (e) => {
+      const bookingId = e.target.dataset.booking;
+      if (confirm('Are you sure you want to cancel this booking?')) {
+        try {
+          const res = await fetch(`${API_BASE}/bookings/${bookingId}`, {
+            method: 'DELETE',
+            headers: {
+              'Content-Type': 'application/json',
+              ...getAuthHeaders()
+            }
+          });
+          await handleResponse(res);
+          alert('Booking cancelled!');
+          window.location.reload();
+        } catch (err) {
+          console.error('Cancel error:', err);
+          alert(`Cancellation failed: ${err.message}`);
+        }
+      }
+    });
+  });
 });
