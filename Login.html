@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Login | Student Resource Booking System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="Index.js" defer></script>
+
+</head>
+
+<body class="background-image">
+  <header>
+
+    <header>
+      <img src="images/logo.png" class="logo" alt="Logo" width="90">
+      <nav>
+        <h2>Student Resource Booking System </h2>
+      </nav>
+    </header>
+
+    <nav>
+      <a href="Registration.html">Register here!</a>
+
+    </nav>
+
+    <header>
+      <nav>
+        <h3>User Login</h3>
+      </nav>
+    </header>
+
+  </header>
+
+  <fieldset>
+    <form id="loginForm" action="/login" method="POST">
+      <label for="email">Email:</label>
+      <input type="text" name="email" id="email" required />
+      <br><br>
+
+      <label for="password">Password:</label>
+      <input type="password" name="password" id="password" required />
+      <br><br>
+
+      <button type="submit">Login</button>
+    </form>
+  </fieldset>
+
+</body>
+
+</html>

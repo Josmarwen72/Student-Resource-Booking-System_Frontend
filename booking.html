@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>My Bookings|Student Booking System</title>
+  <link rel="stylesheet" href="css/style.css" />
+  <script src="Index.js" defer></script>
+</head>
+
+<body>
+ <header>          
+ 
+  <header>
+    <img src="images/logo.png" width="90">
+    <h2>Student Resource Booking System</h2>
+
+    <nav>
+
+      <a href="Resources.html">Resources</a>
+      <a href="AdminPanel.html">Admin Panel</a>
+      <a href="Login.html">Logout</a>
+
+    </nav>
+
+  </header>
+
+</header>
+
+<header>
+<nav>
+  <img src="images/students.jpg" width="450" height="250">
+  <img src="images/Students1.jpg" width="450" height="250">
+  <img src="images/materials.jpg" width="450" height="250">
+
+</nav>
+
+</header>
+
+  <main class="booking-section">
+    <h1>My Bookings</h1>
+
+    <section class="booking-form">
+      <h2>Book a New Slot</h2>
+      <form id="newBookingForm">
+        <label for="resSelect">Resource:</label>
+        <select id="resSelect" name="resourceId" required>
+          <option value="">-- Choose resource --</option>
+          <option value="1">Study Room A</option>
+          <option value="2">Biology Lab 1</option>
+          <option value="3">Electronics Lab</option>
+        </select>
+
+        <label for="slotSelect">Time Slot:</label>
+        <select id="slotSelect" name="slot" required>
+          <option value="">-- Choose slot --</option>
+          <option value="08-10">08:00 – 10:00</option>
+          <option value="10-12-30pm">10:00 – 12:30pm</option>
+          <option value="02:00pm – 03:00pm">02:00pm – 03:00pm</option>
+          <option value="03:00pm – 04:00pm">03:00pm – 04:00pm</option>
+          <option value="04:00pm – 05:00pm">04:00pm – 05:00pm</option>
+          
+        </select>
+
+        <button type="submit">Book Slot</button>
+      </form>
+    </section>
+
+    <section class="current-bookings">
+      <h2>Current Bookings</h2>
+      <table id="myBookingsTable">
+        <thead>
+          <tr>
+            <th>Resource</th>
+            <th>Slot</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Study Room A</td>
+            <td>9:00 – 10:00</td>
+            <td>
+              <button class="update-btn" data-booking="101">Update</button>
+              <button class="cancel-btn" data-booking="101">Cancel</button>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+    </section>
+  </main>
+
+</body>
+
+</html>
