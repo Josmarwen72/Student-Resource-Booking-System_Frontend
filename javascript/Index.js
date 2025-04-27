@@ -1,7 +1,7 @@
 /* Index.js - Frontend logic with API integration */
 
 // Base URL for backend API
-const API_BASE = 'http://192.168.100.7:4000/api';
+const API_BASE = 'https://srbs-backend-postgress.onrender.com';
 
 // Helper to get auth headers
 function getAuthHeaders() {
