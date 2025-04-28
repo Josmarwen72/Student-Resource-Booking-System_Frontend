@@ -1,5 +1,6 @@
 # Student-Resource-Booking-System_Frontend
 
+Deployed Frontend Link on GitHub : https://josmarwen72.github.io/Student-Resource-Booking-System_Frontend/
 
 ## Project Overview
 
@@ -29,10 +30,7 @@ Access to fetch at 'http://192.168.100.7:4000/api/auth/register' from origin 'ht
 **Cause:**
 This issue was caused by incorrect CORS configuration. The backend was not allowing the specific origin (`http://192.168.100.7:5500`) to access the resources.
 
-**Solution:**
-The CORS configuration was updated in the backend to specifically allow multiple origins (both local and remote). The CORS middleware was configured to include both `http://localhost:5500` and `http://192.168.100.7:5500` as allowed origins.
 
----
 
 ### **Issue 2: Failed Registration/Failed Fetch**
 
@@ -45,8 +43,6 @@ Registration error: TypeError: Failed to fetch
 **Cause:**
 This error was likely caused by either an incorrect API endpoint or CORS-related issues, resulting in the registration request not being properly processed by the backend.
 
-**Solution:**
-After resolving the CORS configuration, the issue was mitigated, allowing successful communication between the frontend and backend.
 
 ---
 
@@ -58,15 +54,9 @@ The frontend was unable to add a slot when trying to make a booking.
 **Cause:**
 This issue was likely due to the absence of proper API calls or incorrect handling of the form submission in the frontend JavaScript logic.
 
-**Solution:**
-The frontend code was updated to properly integrate with the backend API for booking slots. The API calls now correctly handle booking submissions, sending the resource and time slot data to the backend.
 
 ---
 
-### Conclusion:
-After addressing the CORS issue and ensuring the frontend logic was correctly integrated with the backend API, all major issues were resolved. The system now allows for successful user registration, login, and resource booking functionalities.
-
----
 
 
 
