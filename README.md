@@ -68,6 +68,6 @@ After addressing the CORS issue and ensuring the frontend logic was correctly in
 
 ---
 
-Let me know if you need any adjustments to the report!
+
 
 
